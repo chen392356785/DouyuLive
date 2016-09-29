@@ -48,6 +48,7 @@ class PageTitleView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    //MARK:- 设置UI界面
     private func setupUI() {
         // 1.添加UIScrollView
         addSubview(scrollView)
