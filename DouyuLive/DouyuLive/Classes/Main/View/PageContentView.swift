@@ -8,13 +8,22 @@
 
 import UIKit
 
+protocol PageContentViewDelegate : class {
+    func pageContentView(contentView: PageContentView, progress: CGFloat, sourceIndex: Int, targetIndex: Int)
+}
+
+
 private let ContentCellID = "ContentCellID"
 
-class PageContentView: UIView, UICollectionViewDataSource {
+class PageContentView: UIView, UICollectionViewDataSource, UICollectionViewDelegate {
     
     //MARK:- 定义属性
     private var childVCs : [UIViewController]
     private weak var parentViewController : UIViewController?
+    
+    private var startOffsetX : CGFloat = 0
+    
+    weak var delegate: PageContentViewDelegate?
     
     // MARK:- 懒加载属性
     
@@ -33,6 +42,7 @@ class PageContentView: UIView, UICollectionViewDataSource {
         collectionView.bounces = false
         
         collectionView.dataSource = self
+        collectionView.delegate = self
         
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: ContentCellID)
         
@@ -88,6 +98,62 @@ class PageContentView: UIView, UICollectionViewDataSource {
         return cell
         
     }
+    
+    // MARK:- 遵守UICollectionViewDelegate
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        startOffsetX = scrollView.contentOffset.x
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+         // 1.获取需要的数据
+        var progress : CGFloat = 0
+        var sourceIndex : Int = 0
+        var targetIndex: Int = 0
+        
+        // 2.判断是左滑动还是右滑动
+        let currentOffsetX = scrollView.contentOffset.x
+        let scrollViewW = scrollView.bounds.width
+        if currentOffsetX > startOffsetX { // 左滑动
+            // 1.计算progress
+            progress = currentOffsetX / scrollViewW  - floor(currentOffsetX / scrollViewW)
+            
+            // 2.计算sourceIndex
+            sourceIndex = Int(currentOffsetX / scrollViewW)
+            
+            // 3.计算targetIndex
+            targetIndex = sourceIndex + 1
+            if targetIndex >= childVCs.count {
+                targetIndex = childVCs.count - 1
+            }
+            
+            // 4.如果完全划过去
+            if currentOffsetX - startOffsetX == scrollViewW {
+                progress = 1
+                targetIndex = sourceIndex
+            }
+        } else { //右滑动
+            // 1.计算progress
+            progress = 1 - (currentOffsetX / scrollViewW  - floor(currentOffsetX / scrollViewW))
+            
+            // 2.计算targetIndex
+            targetIndex = Int(currentOffsetX / scrollViewW)
+            
+            // 3.计算sourceIndex
+            sourceIndex = targetIndex + 1
+            if targetIndex >= childVCs.count {
+                sourceIndex = childVCs.count - 1
+            }
+            
+            
+    
+        }
+        
+        // 3.将progress/sourceIndex/tagetIndex传递给titleView
+        delegate?.pageContentView(contentView: self, progress: progress, sourceIndex: sourceIndex, targetIndex: targetIndex)
+    }
+    
+    
     
     //MARK:- 对外界暴露的方法
     func setCurrentIndex(currentIndex: Int){

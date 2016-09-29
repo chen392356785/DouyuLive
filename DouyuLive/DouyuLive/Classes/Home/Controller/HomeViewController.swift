@@ -10,7 +10,7 @@ import UIKit
 
 private let kTitleViewH : CGFloat = 40
 
-class HomeViewController: UIViewController, PageTitleViewDelegate {
+class HomeViewController: UIViewController, PageTitleViewDelegate, PageContentViewDelegate {
 
     // MARK:- 懒加载属性
     private lazy var pageTitleView : PageTitleView = { [weak self] in
@@ -36,6 +36,7 @@ class HomeViewController: UIViewController, PageTitleViewDelegate {
         }
         
         let contentView = PageContentView(frame: contentFrame, childVCs: childVCs, parentViewController: self)
+        contentView.delegate = self
         return contentView
     }()
     
@@ -83,5 +84,10 @@ class HomeViewController: UIViewController, PageTitleViewDelegate {
     
     func pageTitleView(titleView: PageTitleView, selectedIndex: Int) {
         pageContentView.setCurrentIndex(currentIndex: selectedIndex)
+    }
+    //MARK:- 遵守PageContentViewDelegate
+    func pageContentView(contentView: PageContentView, progress: CGFloat, sourceIndex: Int, targetIndex: Int) {
+        pageTitleView.setTitleWithProgress(progress : progress, sourceIndex: sourceIndex, targetIndex: targetIndex)
+        
     }
 }

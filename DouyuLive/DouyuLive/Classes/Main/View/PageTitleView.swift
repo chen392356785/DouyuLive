@@ -149,5 +149,9 @@ class PageTitleView: UIView {
         delegate?.pageTitleView(titleView: self, selectedIndex: currentIndex)
         
     }
-
+    
+    //MARK:- 对外界暴露的方法
+    func setTitleWithProgress(progress : CGFloat, sourceIndex: Int, targetIndex: Int) {
+        
+    }
 }
