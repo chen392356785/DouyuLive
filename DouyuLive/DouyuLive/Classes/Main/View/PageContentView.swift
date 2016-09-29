@@ -25,6 +25,8 @@ class PageContentView: UIView, UICollectionViewDataSource, UICollectionViewDeleg
     
     weak var delegate: PageContentViewDelegate?
     
+    private var isForbidScrollDelegate : Bool = false
+    
     // MARK:- 懒加载属性
     
     private lazy var collectionView : UICollectionView = {[weak self] in
@@ -102,10 +104,17 @@ class PageContentView: UIView, UICollectionViewDataSource, UICollectionViewDeleg
     // MARK:- 遵守UICollectionViewDelegate
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        isForbidScrollDelegate = false
+        
         startOffsetX = scrollView.contentOffset.x
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        // 0.判断是否是点击事件
+        if isForbidScrollDelegate {
+            return
+        }
+        
          // 1.获取需要的数据
         var progress : CGFloat = 0
         var sourceIndex : Int = 0
@@ -157,6 +166,11 @@ class PageContentView: UIView, UICollectionViewDataSource, UICollectionViewDeleg
     
     //MARK:- 对外界暴露的方法
     func setCurrentIndex(currentIndex: Int){
+        
+        // 1.记录需要进行执行代理方法
+        isForbidScrollDelegate = true
+        
+        // 2.滚动到正确的位置
         let offsetX = CGFloat(currentIndex) * collectionView.frame.width
         collectionView.setContentOffset(CGPoint(x: offsetX, y: 0), animated: false)
     }
