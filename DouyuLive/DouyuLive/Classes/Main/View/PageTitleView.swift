@@ -8,12 +8,19 @@
 
 import UIKit
 
+protocol PageTitleViewDelegate: class {
+    func pageTitleView(titleView: PageTitleView, selectedIndex: Int)
+}
+
 private let kScrollLineH : CGFloat = 2
 
 class PageTitleView: UIView {
     
     //MARK:- 定义属性
+    private var currentIndex : Int = 0
     private var titles: [String]
+    
+    weak var delegate: PageTitleViewDelegate?
     
     // MARK:- 懒加载属性
     private lazy var scrollView : UIScrollView = {
@@ -87,6 +94,11 @@ class PageTitleView: UIView {
             // 4.将lable添加到scrollView中
             scrollView.addSubview(label)
             titleLabels.append(label)
+            
+            // 5.给Label添加手势
+            label.isUserInteractionEnabled = true
+            let tapGes = UITapGestureRecognizer(target: self, action: #selector(self.titleLabelClick(tapGes:)))
+            label.addGestureRecognizer(tapGes)
         }
         
     }
@@ -107,6 +119,35 @@ class PageTitleView: UIView {
         scrollView.addSubview(scrollLine)
         
         scrollLine.frame = CGRect(x: firstLabel.frame.origin.x, y: frame.height - kScrollLineH, width: firstLabel.frame.width, height: kScrollLineH)
+    }
+    
+    //MARK:-监听label的点击
+    @objc private func titleLabelClick(tapGes : UITapGestureRecognizer) {
+        print("-----")
+        
+        // 1.获取当前Label
+        guard let currentLabel = tapGes.view as? UILabel else { return }
+        
+        // 2.获取之前的Label
+        let oldLabel = titleLabels[currentIndex]
+        
+        // 3.切换文字的颜色
+        currentLabel.textColor = UIColor.orange
+        oldLabel.textColor = UIColor.darkGray
+        
+        // 4.保存最新Label的下标识
+        currentIndex = currentLabel.tag
+        
+        // 5.滚动条位置发生改变
+        let scrollLineX = CGFloat(currentLabel.tag) * scrollLine.frame.width
+        
+        UIView.animate(withDuration: 0.15) { 
+            self.scrollLine.frame.origin.x = scrollLineX
+        }
+        
+        // 6.通知代理
+        delegate?.pageTitleView(titleView: self, selectedIndex: currentIndex)
+        
     }
 
 }
