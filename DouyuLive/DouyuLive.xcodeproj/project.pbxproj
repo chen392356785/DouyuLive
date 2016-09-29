@@ -21,6 +21,8 @@
 		CE4A05F31D9CE82200057353 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A05EF1D9CE82200057353 /* MainViewController.swift */; };
 		CE4A05F61D9CE86400057353 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A05F51D9CE86400057353 /* HomeViewController.swift */; };
 		CE4A05F91D9CEC4000057353 /* UIBarButtonItem-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A05F81D9CEC4000057353 /* UIBarButtonItem-Extension.swift */; };
+		CE4A05FB1D9CF26700057353 /* PageTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A05FA1D9CF26700057353 /* PageTitleView.swift */; };
+		CE4A05FD1D9CF3DB00057353 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A05FC1D9CF3DB00057353 /* Common.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		CE4A05EF1D9CE82200057353 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		CE4A05F51D9CE86400057353 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		CE4A05F81D9CEC4000057353 /* UIBarButtonItem-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem-Extension.swift"; sourceTree = "<group>"; };
+		CE4A05FA1D9CF26700057353 /* PageTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageTitleView.swift; sourceTree = "<group>"; };
+		CE4A05FC1D9CF3DB00057353 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				CE4A05F71D9CEC1400057353 /* Extension */,
+				CE4A05FC1D9CF3DB00057353 /* Common.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -246,6 +251,7 @@
 		CE4A05F21D9CE82200057353 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CE4A05FA1D9CF26700057353 /* PageTitleView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -402,7 +408,9 @@
 			files = (
 				CE4A059B1D9CBE8800057353 /* AppDelegate.swift in Sources */,
 				CE4A05F31D9CE82200057353 /* MainViewController.swift in Sources */,
+				CE4A05FB1D9CF26700057353 /* PageTitleView.swift in Sources */,
 				CE4A05F91D9CEC4000057353 /* UIBarButtonItem-Extension.swift in Sources */,
+				CE4A05FD1D9CF3DB00057353 /* Common.swift in Sources */,
 				CE4A05F61D9CE86400057353 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
