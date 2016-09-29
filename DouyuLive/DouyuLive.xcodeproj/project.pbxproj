@@ -18,7 +18,9 @@
 		CE4A05E11D9CDE6C00057353 /* Live.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE4A05DF1D9CDE6C00057353 /* Live.storyboard */; };
 		CE4A05E41D9CDE8200057353 /* Follow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE4A05E21D9CDE8200057353 /* Follow.storyboard */; };
 		CE4A05E71D9CDE9700057353 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE4A05E51D9CDE9700057353 /* Profile.storyboard */; };
-		CE4A05E91D9CE35900057353 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A05E81D9CE35900057353 /* MainViewController.swift */; };
+		CE4A05F31D9CE82200057353 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A05EF1D9CE82200057353 /* MainViewController.swift */; };
+		CE4A05F61D9CE86400057353 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A05F51D9CE86400057353 /* HomeViewController.swift */; };
+		CE4A05F91D9CEC4000057353 /* UIBarButtonItem-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A05F81D9CEC4000057353 /* UIBarButtonItem-Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,7 +58,9 @@
 		CE4A05E01D9CDE6C00057353 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = DouyuLive/Base.lproj/Live.storyboard; sourceTree = SOURCE_ROOT; };
 		CE4A05E31D9CDE8200057353 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = DouyuLive/Base.lproj/Follow.storyboard; sourceTree = SOURCE_ROOT; };
 		CE4A05E61D9CDE9700057353 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = DouyuLive/Base.lproj/Profile.storyboard; sourceTree = SOURCE_ROOT; };
-		CE4A05E81D9CE35900057353 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		CE4A05EF1D9CE82200057353 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		CE4A05F51D9CE86400057353 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		CE4A05F81D9CEC4000057353 /* UIBarButtonItem-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem-Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,7 +163,9 @@
 		CE4A05CC1D9CD91300057353 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				CE4A05DC1D9CDE5000057353 /* Home.storyboard */,
+				CE4A05EB1D9CE7E300057353 /* Controller */,
+				CE4A05EC1D9CE7E300057353 /* Model */,
+				CE4A05ED1D9CE7E300057353 /* View */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -175,8 +181,9 @@
 		CE4A05CE1D9CD91300057353 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				CE4A059E1D9CBE8800057353 /* Main.storyboard */,
-				CE4A05E81D9CE35900057353 /* MainViewController.swift */,
+				CE4A05EE1D9CE82200057353 /* Controller */,
+				CE4A05F11D9CE82200057353 /* Model */,
+				CE4A05F21D9CE82200057353 /* View */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -192,8 +199,63 @@
 		CE4A05D01D9CD91300057353 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				CE4A05F71D9CEC1400057353 /* Extension */,
 			);
 			path = Tools;
+			sourceTree = "<group>";
+		};
+		CE4A05EB1D9CE7E300057353 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CE4A05F51D9CE86400057353 /* HomeViewController.swift */,
+				CE4A05DC1D9CDE5000057353 /* Home.storyboard */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CE4A05EC1D9CE7E300057353 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CE4A05ED1D9CE7E300057353 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CE4A05EE1D9CE82200057353 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CE4A059E1D9CBE8800057353 /* Main.storyboard */,
+				CE4A05EF1D9CE82200057353 /* MainViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CE4A05F11D9CE82200057353 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CE4A05F21D9CE82200057353 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CE4A05F71D9CEC1400057353 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				CE4A05F81D9CEC4000057353 /* UIBarButtonItem-Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -339,7 +401,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE4A059B1D9CBE8800057353 /* AppDelegate.swift in Sources */,
-				CE4A05E91D9CE35900057353 /* MainViewController.swift in Sources */,
+				CE4A05F31D9CE82200057353 /* MainViewController.swift in Sources */,
+				CE4A05F91D9CEC4000057353 /* UIBarButtonItem-Extension.swift in Sources */,
+				CE4A05F61D9CE86400057353 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,7 +445,7 @@
 				CE4A059F1D9CBE8800057353 /* Base */,
 			);
 			name = Main.storyboard;
-			path = ../..;
+			path = ../../..;
 			sourceTree = "<group>";
 		};
 		CE4A05A31D9CBE8800057353 /* LaunchScreen.storyboard */ = {
@@ -398,7 +462,7 @@
 				CE4A05DD1D9CDE5000057353 /* Base */,
 			);
 			name = Home.storyboard;
-			path = ../Main;
+			path = ../../Main;
 			sourceTree = "<group>";
 		};
 		CE4A05DF1D9CDE6C00057353 /* Live.storyboard */ = {
