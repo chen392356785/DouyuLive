@@ -14,6 +14,7 @@
 		CE4A05A51D9CBE8800057353 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE4A05A31D9CBE8800057353 /* LaunchScreen.storyboard */; };
 		CE4A05B01D9CBE8800057353 /* DouyuLiveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A05AF1D9CBE8800057353 /* DouyuLiveTests.swift */; };
 		CE4A05BB1D9CBE8800057353 /* DouyuLiveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A05BA1D9CBE8800057353 /* DouyuLiveUITests.swift */; };
+		CE4A05C91D9CD65300057353 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE4A05C81D9CD65300057353 /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		CE4A05B61D9CBE8800057353 /* DouyuLiveUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DouyuLiveUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE4A05BA1D9CBE8800057353 /* DouyuLiveUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DouyuLiveUITests.swift; sourceTree = "<group>"; };
 		CE4A05BC1D9CBE8800057353 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE4A05C81D9CD65300057353 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				CE4A05A11D9CBE8800057353 /* Assets.xcassets */,
 				CE4A05A31D9CBE8800057353 /* LaunchScreen.storyboard */,
 				CE4A05A61D9CBE8800057353 /* Info.plist */,
+				CE4A05C81D9CD65300057353 /* Images.xcassets */,
 			);
 			path = DouyuLive;
 			sourceTree = "<group>";
@@ -236,6 +239,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE4A05A51D9CBE8800057353 /* LaunchScreen.storyboard in Resources */,
+				CE4A05C91D9CD65300057353 /* Images.xcassets in Resources */,
 				CE4A05A21D9CBE8800057353 /* Assets.xcassets in Resources */,
 				CE4A05A01D9CBE8800057353 /* Main.storyboard in Resources */,
 			);
@@ -413,8 +417,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				DEVELOPMENT_TEAM = KMCXAAL983;
 				INFOPLIST_FILE = DouyuLive/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.chenxl.DouyuLive;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -426,8 +432,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				DEVELOPMENT_TEAM = KMCXAAL983;
 				INFOPLIST_FILE = DouyuLive/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.chenxl.DouyuLive;
 				PRODUCT_NAME = "$(TARGET_NAME)";
