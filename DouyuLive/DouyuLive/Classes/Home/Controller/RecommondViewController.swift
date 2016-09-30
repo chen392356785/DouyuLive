@@ -74,18 +74,23 @@ class RecommondViewController: UIViewController, UICollectionViewDataSource, UIC
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        // 1.定义Cell
-        let cell : UICollectionViewCell!
+        
+        let group = recommendVM.anchorGroup[indexPath.section]
+        let anchor = group.anchors[indexPath.item]
         
         // 2.取出Cell
         if indexPath.section == 1 {
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: kPrettyCellID, for: indexPath)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kPrettyCellID, for: indexPath) as! CollectionPrettyCell
+            cell.anchor = anchor
+            return cell
         } else {
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: kNomarlCellID, for: indexPath)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kNomarlCellID, for: indexPath) as! CollectionNormalCell
+            cell.anchor = anchor
+            return cell
         }
         
         
-        return cell
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {

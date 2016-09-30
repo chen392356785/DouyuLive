@@ -126,10 +126,11 @@ class PageTitleView: UIView {
     
     //MARK:-监听label的点击
     @objc private func titleLabelClick(tapGes : UITapGestureRecognizer) {
-        print("-----")
         
         // 1.获取当前Label
         guard let currentLabel = tapGes.view as? UILabel else { return }
+        
+        if currentLabel.tag == currentIndex {return}
         
         // 2.获取之前的Label
         let oldLabel = titleLabels[currentIndex]
