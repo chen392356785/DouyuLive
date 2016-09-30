@@ -30,12 +30,13 @@ class RecommondViewController: UIViewController, UICollectionViewDataSource {
         
         // 2.创建UICollectionView
         let collectionView = UICollectionView(frame: self.view.bounds, collectionViewLayout: layout)
+        collectionView.backgroundColor = UIColor.white
         collectionView.dataSource = self
         collectionView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: kNomarlCellID)
+        collectionView.register(UINib(nibName:"CollectionNormalCell", bundle: nil), forCellWithReuseIdentifier: kNomarlCellID)
         
-        collectionView.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: kHeaderViewID)
+        collectionView.register(UINib(nibName:"CollectionHeaderView", bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: kHeaderViewID)
         
         return collectionView
     }()
@@ -44,6 +45,7 @@ class RecommondViewController: UIViewController, UICollectionViewDataSource {
         super.viewDidLoad()
         
         setupUI()
+        
         
     }
     
@@ -67,7 +69,7 @@ class RecommondViewController: UIViewController, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kNomarlCellID, for: indexPath)
-        cell.backgroundColor = UIColor.red
+        
         
         return cell
     }
@@ -75,8 +77,6 @@ class RecommondViewController: UIViewController, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         // 1.取出section的HeaderView
         let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: kHeaderViewID, for: indexPath)
-        
-        headerView.backgroundColor = UIColor.green
         
         return headerView
     }
