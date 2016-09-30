@@ -44,13 +44,16 @@ class RecommondViewController: UIViewController, UICollectionViewDataSource, UIC
         
         return collectionView
     }()
+    
+    private lazy var recommendVM : RecommendViewModel = RecommendViewModel()
     // MARK:- 系统回调函数
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupUI()
         
-        
+        // 发送网络请求
+        loadData()
     }
     
     //MARK:- 设置UI界面
@@ -99,5 +102,10 @@ class RecommondViewController: UIViewController, UICollectionViewDataSource, UIC
         } else {
             return CGSize(width: kItemW, height: kNormalItemH)
         }
+    }
+    
+    //MARK:- 请求数据
+    private func loadData() {
+        recommendVM.requestData()
     }
 }
