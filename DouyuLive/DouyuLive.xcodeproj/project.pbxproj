@@ -13,7 +13,6 @@
 		CE4A05A51D9CBE8800057353 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE4A05A31D9CBE8800057353 /* LaunchScreen.storyboard */; };
 		CE4A05B01D9CBE8800057353 /* DouyuLiveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A05AF1D9CBE8800057353 /* DouyuLiveTests.swift */; };
 		CE4A05BB1D9CBE8800057353 /* DouyuLiveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A05BA1D9CBE8800057353 /* DouyuLiveUITests.swift */; };
-		CE4A05C91D9CD65300057353 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE4A05C81D9CD65300057353 /* Images.xcassets */; };
 		CE4A05DE1D9CDE5000057353 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE4A05DC1D9CDE5000057353 /* Home.storyboard */; };
 		CE4A05E11D9CDE6C00057353 /* Live.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE4A05DF1D9CDE6C00057353 /* Live.storyboard */; };
 		CE4A05E41D9CDE8200057353 /* Follow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE4A05E21D9CDE8200057353 /* Follow.storyboard */; };
@@ -64,7 +63,6 @@
 		CE4A05B61D9CBE8800057353 /* DouyuLiveUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DouyuLiveUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE4A05BA1D9CBE8800057353 /* DouyuLiveUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DouyuLiveUITests.swift; sourceTree = "<group>"; };
 		CE4A05BC1D9CBE8800057353 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CE4A05C81D9CD65300057353 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		CE4A05DD1D9CDE5000057353 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = DouyuLive/Base.lproj/Home.storyboard; sourceTree = SOURCE_ROOT; };
 		CE4A05E01D9CDE6C00057353 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = DouyuLive/Base.lproj/Live.storyboard; sourceTree = SOURCE_ROOT; };
 		CE4A05E31D9CDE8200057353 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = DouyuLive/Base.lproj/Follow.storyboard; sourceTree = SOURCE_ROOT; };
@@ -138,7 +136,6 @@
 				CE4A05A11D9CBE8800057353 /* Assets.xcassets */,
 				CE4A05A31D9CBE8800057353 /* LaunchScreen.storyboard */,
 				CE4A05A61D9CBE8800057353 /* Info.plist */,
-				CE4A05C81D9CD65300057353 /* Images.xcassets */,
 			);
 			path = DouyuLive;
 			sourceTree = "<group>";
@@ -406,7 +403,6 @@
 				CE59DDBF1D9DF4D900115313 /* CollectionNormalCell.xib in Resources */,
 				CE4A05E71D9CDE9700057353 /* Profile.storyboard in Resources */,
 				CE4A05E11D9CDE6C00057353 /* Live.storyboard in Resources */,
-				CE4A05C91D9CD65300057353 /* Images.xcassets in Resources */,
 				CE59DDBB1D9DF08F00115313 /* CollectionHeaderView.xib in Resources */,
 				CE4A05E41D9CDE8200057353 /* Follow.storyboard in Resources */,
 				CE59DDC31D9DF92300115313 /* CollectionPrettyCell.xib in Resources */,
