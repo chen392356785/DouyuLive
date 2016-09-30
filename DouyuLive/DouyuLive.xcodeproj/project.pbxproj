@@ -33,6 +33,9 @@
 		CE59DDC31D9DF92300115313 /* CollectionPrettyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE59DDC11D9DF92300115313 /* CollectionPrettyCell.xib */; };
 		CEABED3A1D9E337C002C6256 /* NetWorkManage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEABED391D9E337C002C6256 /* NetWorkManage.swift */; };
 		CEABED441D9E39C9002C6256 /* RecommendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEABED431D9E39C9002C6256 /* RecommendViewModel.swift */; };
+		CEABED461D9E3C7A002C6256 /* NSDate-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEABED451D9E3C7A002C6256 /* NSDate-Extension.swift */; };
+		CEABED481D9E3F91002C6256 /* AnchorGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEABED471D9E3F91002C6256 /* AnchorGroup.swift */; };
+		CEABED4A1D9E4187002C6256 /* AnchorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEABED491D9E4187002C6256 /* AnchorModel.swift */; };
 		E288CFE3D8402C182E9440FD /* libPods-DouyuLive.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B41DF1183B64632590A005B /* libPods-DouyuLive.a */; };
 /* End PBXBuildFile section */
 
@@ -89,6 +92,9 @@
 		CEABED391D9E337C002C6256 /* NetWorkManage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetWorkManage.swift; sourceTree = "<group>"; };
 		CEABED3B1D9E33B3002C6256 /* DouyuLive-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DouyuLive-Bridging-Header.h"; sourceTree = "<group>"; };
 		CEABED431D9E39C9002C6256 /* RecommendViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendViewModel.swift; sourceTree = "<group>"; };
+		CEABED451D9E3C7A002C6256 /* NSDate-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate-Extension.swift"; sourceTree = "<group>"; };
+		CEABED471D9E3F91002C6256 /* AnchorGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnchorGroup.swift; path = DouyuLive/Classes/Tools/Extension/AnchorGroup.swift; sourceTree = SOURCE_ROOT; };
+		CEABED491D9E4187002C6256 /* AnchorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnchorModel.swift; path = DouyuLive/Classes/Tools/Extension/AnchorModel.swift; sourceTree = SOURCE_ROOT; };
 		FBD1BEC341E025EDC69A067D /* Pods-DouyuLive.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DouyuLive.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DouyuLive/Pods-DouyuLive.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -294,6 +300,8 @@
 		CE4A05F11D9CE82200057353 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CEABED471D9E3F91002C6256 /* AnchorGroup.swift */,
+				CEABED491D9E4187002C6256 /* AnchorModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -316,6 +324,7 @@
 			children = (
 				CE4A05F81D9CEC4000057353 /* UIBarButtonItem-Extension.swift */,
 				CE4A06001D9CFFB100057353 /* UIColor-Extension.swift */,
+				CEABED451D9E3C7A002C6256 /* NSDate-Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -528,16 +537,19 @@
 				CE59DDBA1D9DF08F00115313 /* CollectionHeaderView.swift in Sources */,
 				CE4A06011D9CFFB100057353 /* UIColor-Extension.swift in Sources */,
 				CEABED3A1D9E337C002C6256 /* NetWorkManage.swift in Sources */,
+				CEABED481D9E3F91002C6256 /* AnchorGroup.swift in Sources */,
 				CE4A05F31D9CE82200057353 /* MainViewController.swift in Sources */,
 				CE4A05FB1D9CF26700057353 /* PageTitleView.swift in Sources */,
 				CE4A05FF1D9CFD5A00057353 /* PageContentView.swift in Sources */,
 				CE4A05F91D9CEC4000057353 /* UIBarButtonItem-Extension.swift in Sources */,
 				CE4A06031D9D481C00057353 /* RecommondViewController.swift in Sources */,
 				CE4A05FD1D9CF3DB00057353 /* Common.swift in Sources */,
+				CEABED461D9E3C7A002C6256 /* NSDate-Extension.swift in Sources */,
 				CE59DDC21D9DF92300115313 /* CollectionPrettyCell.swift in Sources */,
 				CE59DDBE1D9DF4D900115313 /* CollectionNormalCell.swift in Sources */,
 				CE4A05F61D9CE86400057353 /* HomeViewController.swift in Sources */,
 				CEABED441D9E39C9002C6256 /* RecommendViewModel.swift in Sources */,
+				CEABED4A1D9E4187002C6256 /* AnchorModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

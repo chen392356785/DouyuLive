@@ -64,14 +64,13 @@ class RecommondViewController: UIViewController, UICollectionViewDataSource, UIC
     
     //MARK:- UICollectionViewDataSource
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 12
+        return recommendVM.anchorGroup.count
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if section == 0 {
-            return 8
-        }
-        return 4
+        let group = recommendVM.anchorGroup[section]
+        
+        return group.anchors.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -91,7 +90,10 @@ class RecommondViewController: UIViewController, UICollectionViewDataSource, UIC
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         // 1.取出section的HeaderView
-        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: kHeaderViewID, for: indexPath)
+        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: kHeaderViewID, for: indexPath) as! CollectionHeaderView
+        
+        // 2.取出模型
+        headerView.group = recommendVM.anchorGroup[indexPath.section]
         
         return headerView
     }
@@ -106,6 +108,8 @@ class RecommondViewController: UIViewController, UICollectionViewDataSource, UIC
     
     //MARK:- 请求数据
     private func loadData() {
-        recommendVM.requestData()
+        recommendVM.requestData { 
+            self.collectionView.reloadData()
+        }
     }
 }
